@@ -18,6 +18,9 @@ public class AppController {
 	@GetMapping("")
 	public String viewHomePage() {
 		
+		
+		System.out.println("asdf");
+		
 		return "index";
 		
 	}

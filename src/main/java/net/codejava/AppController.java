@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -17,12 +18,7 @@ public class AppController {
 	
 	@GetMapping("")
 	public String viewHomePage() {
-		
-		
-		System.out.println("asdf");
-		
 		return "index";
-		
 	}
 	
 	@GetMapping("/register")
@@ -33,12 +29,17 @@ public class AppController {
 	}
 	
 	@PostMapping("/process_register")
-	public String processRegister(User user) {
+	public String processRegister(User user,BindingResult bindingResult) {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		String encodedPassword = passwordEncoder.encode(user.getPassword());
 		user.setPassword(encodedPassword);
-		
-		userRepo.save(user);
+		try {
+			userRepo.save(user);
+			
+		}catch(Exception e){
+			 bindingResult.rejectValue("email", "error.email","An account already exists for this email.");
+			 return "signup_form";
+		}
 		
 		return "register_success";
 	}
@@ -50,4 +51,8 @@ public class AppController {
 		
 		return "users";
 	}
+	
+	
+	
+	
 }

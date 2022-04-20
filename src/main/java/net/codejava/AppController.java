@@ -52,6 +52,11 @@ public class AppController {
 		return "users";
 	}
 	
+	@GetMapping("/login")
+	public String viewLoginPage() {
+		
+		return "login";
+	}
 	
 	
 	

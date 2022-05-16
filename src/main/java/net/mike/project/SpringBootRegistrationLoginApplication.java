@@ -9,5 +9,5 @@ public class SpringBootRegistrationLoginApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootRegistrationLoginApplication.class, args);
 	}
-//	th:field="${l}"
+
 }

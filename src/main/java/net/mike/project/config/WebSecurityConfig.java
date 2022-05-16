@@ -1,4 +1,4 @@
-package net.codejava;
+package net.mike.project.config;
 
 import javax.sql.DataSource;
 
@@ -12,6 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import net.mike.project.user.detail.CustomUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
@@ -52,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
          .and()
          .formLogin().loginPage("/login")
              .usernameParameter("email")
-             .defaultSuccessUrl("/users")
+             .defaultSuccessUrl("/getDailySpendList")
              .permitAll()
          .and()  
          .logout().logoutSuccessUrl("/").permitAll();

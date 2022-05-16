@@ -1,9 +1,12 @@
-package net.codejava;
+package net.mike.project.user.detail;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import net.mike.project.user.dao.UserRepository;
+import net.mike.project.user.model.User;
 
 public class CustomUserDetailsService implements UserDetailsService {
 

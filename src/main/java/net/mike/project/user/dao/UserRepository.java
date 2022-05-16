@@ -1,7 +1,9 @@
-package net.codejava;
+package net.mike.project.user.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
+import net.mike.project.user.model.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 	

@@ -1,9 +1,11 @@
-package net.codejava;
+package net.mike.project.user.detail;
 
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import net.mike.project.user.model.User;
 
 public class CustomUserDetails implements UserDetails {
 
@@ -51,5 +53,8 @@ public class CustomUserDetails implements UserDetails {
 	public String getFullName() {
 		return user.getFirstName() + " " + user.getLastName();
 	}
-
+	
+	public Long getUserId() {
+		return user.getId();
+	}
 }

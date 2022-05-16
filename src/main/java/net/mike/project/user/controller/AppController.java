@@ -1,4 +1,4 @@
-package net.codejava;
+package net.mike.project.user.controller;
 
 import java.util.List;
 
@@ -9,6 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import net.mike.project.user.dao.UserRepository;
+import net.mike.project.user.model.User;
 
 @Controller
 public class AppController {

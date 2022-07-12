@@ -11,11 +11,11 @@ https://www.youtube.com/watch?v=12xsvif2_-s
 
 # 使用技術
 
-1.Spring Security
-2.Thymelaef
-3.Mysql
-4.Spring boot jpa
-5.
+1. Spring Security
+2. Thymelaef
+3. Mysql
+4. Spring boot jpa
+5. 
 
 # 參考連結
 
